@@ -1,0 +1,29 @@
+#
+# Copyright (C) 2016+ AzerothCore <www.azerothcore.org>, released under: https://github.com/azerothcore/azerothcore-wotlk/blob/master/LICENSE
+#
+
+[worldserver]
+
+########################################
+# My module configuration
+########################################
+#
+#    Elitify.Enabled
+#        Description: Enable/disable the module
+#        Values:      0 - Disabled
+#                     1 - Enabled
+#
+#    Elitify.Logo
+#        Description: Enable/disable the logo of the module at player login
+#        Values:      0 - Disabled
+#                     1 - Enabled
+#
+#    Elitify.Debug
+#        Description: Enable/disable debugging of this module
+#        Values:      0 - Disabled
+#                     1 - Enabled
+#
+
+Elitify.Enabled = 0
+Elitify.Logo    = 1
+Elitify.Debug   = 0
