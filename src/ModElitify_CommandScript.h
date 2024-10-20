@@ -32,7 +32,6 @@ public:
 
     static bool HandleOnCommand     (ChatHandler* handler, const char* args);
     static bool HandleOffCommand    (ChatHandler* handler, const char* args);
-    static bool HandleLevelCommand  (ChatHandler* handler, const char* args);
     static bool HandleScaleCommand  (ChatHandler* handler, const char* args);
     static bool HandleRenCommand    (ChatHandler* handler, const char* args);
     static bool HandleFactCommand   (ChatHandler* handler, const char* args);

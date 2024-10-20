@@ -26,8 +26,6 @@ std::vector<ChatCommand> ModElitify_CommandScript::GetCommands() const
     {
         { "on"     , HandleOnCommand     , SEC_ADMINISTRATOR, Acore::ChatCommands::Console::Yes },
         { "off"    , HandleOffCommand    , SEC_ADMINISTRATOR, Acore::ChatCommands::Console::Yes },
-        { "level"  , HandleLevelCommand  , SEC_GAMEMASTER   , Acore::ChatCommands::Console::Yes },
-        { "ren"    , HandleRenCommand    , SEC_GAMEMASTER   , Acore::ChatCommands::Console::Yes },
         { "scale"  , HandleScaleCommand  , SEC_GAMEMASTER   , Acore::ChatCommands::Console::Yes },
         { "fact"   , HandleFactCommand   , SEC_GAMEMASTER   , Acore::ChatCommands::Console::Yes },
         { "display", HandleDisplayCommand, SEC_GAMEMASTER   , Acore::ChatCommands::Console::Yes },
@@ -56,53 +54,6 @@ bool ModElitify_CommandScript::HandleOffCommand(ChatHandler* handler, const char
     Enabled = false;
 
     handler->PSendSysMessage("This module has been disabled");
-    return true;
-}
-
-bool ModElitify_CommandScript::HandleLevelCommand(ChatHandler* handler, const char* args)
-{
-    //
-    // Do not respond to commands if disabled
-    //
-
-    if (!Enabled)
-    {
-        handler->PSendSysMessage("This module is disabled");
-        return true;
-    }
-
-    //
-    // Extracts the level to apply
-    //
-
-    char* opt = strtok((char*)args, " ");
-
-    if (!opt)
-    {
-        handler->PSendSysMessage("Invalid syntax");
-        handler->PSendSysMessage("The accepted command is: efy level <number>");
-        return true;
-    }
-
-    uint32 level = (uint32)strtoul(opt, NULL, 0);
-
-    if (level <= 0 || level > 255)
-    {
-        handler->PSendSysMessage("Invalid level");
-        return true;
-    }
-
-    //
-    // Applies the level
-    //
-
-    Unit* targetUnit = handler->getSelectedUnit();
-
-    if (targetUnit)
-    {
-        targetUnit->SetLevel((uint8)level);
-    }
-
     return true;
 }
 
@@ -138,7 +89,7 @@ bool ModElitify_CommandScript::HandleRenCommand(ChatHandler* handler, const char
 
     if (targetUnit)
     {
-        targetUnit->SetName(args);
+        // TODO
     }
 
     return true;
