@@ -9,7 +9,7 @@
 #include "ModElitify.h"
 #include "ModElitify_PlayerScript.h"
 
-void ModElitify_PlayerScript::OnLogin(Player* Player)
+void ModElitify_PlayerScript::OnPlayerLogin(Player* Player)
 {
     if (Logo)
     {

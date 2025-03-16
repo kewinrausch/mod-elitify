@@ -17,7 +17,7 @@ public:
     {
     }
 
-    void OnLogin(Player* Player) override;
+    void OnPlayerLogin(Player* Player) override;
 };
 
 #endif /* __MOD_ELITIFY_PLAYER_SCRIPT_H */
